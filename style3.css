@@ -1,0 +1,393 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    animation-name: flashBackground;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flashBackground {
+    0% {
+        background-color: #000000;
+    }
+    25% {
+        background-color: #1a1a1a;
+    }
+    50% {
+        background-color: #333333;
+    }
+    75% {
+        background-color: #4d4d4d;
+    }
+    100% {
+        background-color: #000000;
+    }
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+.about-container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    font-size: 2em;
+    color: #e0e0e0;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 20px 0;
+    line-height: 1.6;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.reveal-btn, .proceed-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reveal-btn:hover, .proceed-btn:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+.secret-message {
+    color: #ff3333;
+    font-style: italic;
+    font-size: 1.1em;
+    margin-top: 15px;
+    transition: opacity 1s ease;
+}
+
+.secret-message.hidden {
+    opacity: 0;
+}
+
+.secret-message.fade-in {
+    opacity: 1;
+}
+
+.button-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #333333;
+    text-decoration: none;
+    border: 2px solid #333333;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #555555;
+    transition: left 0.3s ease;
+}
+
+.home-button:hover::before {
+    left: 0;
+}
+
+.home-button:hover {
+    color: #333333;
+    background-color: #ffffff;
+}
+
+.home-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: width 0.4s ease, height 0.4s ease;
+    z-index: 0;
+}
+
+.home-button:hover::after {
+    width: 0;
+    height: 0;
+}
+
+.home-button span {
+    position: relative;
+    z-index: 1;
+}
+
+body {
+    font-family: 'Creepster', cursive; 
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+}
+
+.popup {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+#homeButtonContainer {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10; 
+    padding: 10px;
+}
+
+
+#homeButton {
+    position: absolute;
+    top: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #262626;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+    animation: float 2s ease-in-out infinite alternate;
+}
+
+
+@keyframes float {
+    0% {
+        transform: translate(-50%, -5px);
+    }
+    100% {
+        transform: translate(-50%, 5px);
+    }
+}
+
+#homeButton:hover {
+    background-color: #666;
+    transform: scale(1.05) translateX(-50%);
+}
+
+
+
+#homeOverlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8); 
+    z-index: 20; 
+    justify-content: center;
+    align-items: center;
+}
+
+
+#homeContent {
+    background-color: #fff;
+    width: 400px;
+    height: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    color: #000;
+    text-align: center;
+    max-width: 80%;
+}
+
+
+#closeOverlay {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#closeOverlay:hover {
+    background-color: #666;
+}
+
+
+
+.fade-jitter.active {
+    opacity: 1;
+    transform: translateY(0);
+    animation: jitter 0.2s infinite;
+}
+
+
+.story-text {
+    text-align: center;
+    display: inline-block;
+    font-family: 'Creepster', cursive; 
+    font-size: 1.2 em;
+    width: 80vw; 
+    margin: 0 50px;
+    opacity: 0.9;
+    animation: fadeIn 2s ease-in-out;
+    vertical-align: top;
+    text-shadow: 2px 2px 0 rgba(102, 74, 74, 0.5), 0 0 25px rgba(77, 67, 77, 0.3), 0 0 5px rgba(0, 0, 255, 0.1); /* Add a creepy text shadow */
+}
+
+
+@keyframes glitch {
+    0% { text-shadow: 1px 0 rgb(173, 156, 156); }
+    20% { text-shadow: -1px 0 rgb(33, 42, 42); }
+    40% { text-shadow: 1px 0 rgb(64, 79, 108); }
+    60% { text-shadow: -1px 0 rgb(68, 53, 68); }
+    80% { text-shadow: 1px 0 rgb(130, 130, 118); }
+    100% { text-shadow: -1px 0 rgb(56, 46, 46); }
+}
+
+
+.story-text {
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitchBackground {
+    0% {
+        background-color: #0b0b0b;
+    }
+    15% {
+        background-color: #1c1c1c;
+    }
+    30% {
+        background-color: #0b0b0b;
+    }
+    45% {
+        background-color: #262626;
+    }
+    60% {
+        background-color: #0b0b0b;
+    }
+    75% {
+        background-color: #3d3d3d;
+    }
+    90% {
+        background-color: #0b0b0b;
+    }
+    100% {
+        background-color: #0b0b0b;
+    }
+}
+
+@keyframes colorShift {
+    0% { filter: hue-rotate(0deg); }
+    33% { filter: hue-rotate(90deg); }
+    66% { filter: hue-rotate(180deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+body {
+    animation: glitchBackground 2s infinite, colorShift 10s infinite;
+}
+
+.locks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* pointer-events: none; So they don't interfere with clicks */
+    overflow: hidden;
+    z-index: 5;
+}
+
+.lock {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('https://png.pngtree.com/png-vector/20240208/ourmid/pngtree-home-padlock-security-png-image_11718400.png'); 
+    background-size: cover;
+    animation: floatLock 10s linear infinite, glitchLock 0.3s infinite alternate;
+    mix-blend-mode: difference;
+}
+
+@keyframes floatLock {
+    from {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes glitchLock {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateX(-3px) translateY(-3px) rotate(1deg);
+    }
+    50% {
+        transform: translateX(3px) translateY(3px) rotate(-1deg);
+    }
+    75% {
+        transform: translateX(-3px) translateY(3px) rotate(1deg);
+    }
+    100% {
+        transform: translateX(3px) translateY(-3px) rotate(-1deg);
+    }
+}

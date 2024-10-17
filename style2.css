@@ -1,0 +1,277 @@
+body {
+    font-family: 'Creepster', cursive; 
+    margin: 0;
+    background-color: #111111;
+    overflow: hidden;
+    animation: flashBackground 1s infinite;
+}
+
+
+
+.fade-jitter.active {
+    opacity: 1;
+    transform: translateY(0);
+    animation: jitter 0.2s infinite;
+}
+
+
+.story-text {
+    text-align: center;
+    display: inline-block;
+    font-family: 'Creepster', cursive; 
+    font-size: 1.5em;
+    width: 80vw; 
+    margin: 0 50px;
+    opacity: 0.9;
+    animation: fadeIn 2s ease-in-out;
+    vertical-align: top;
+    text-shadow: 2px 2px 0 rgba(102, 74, 74, 0.5), 0 0 25px rgba(77, 67, 77, 0.3), 0 0 5px rgba(0, 0, 255, 0.1); /* Add a creepy text shadow */
+}
+
+
+@keyframes glitch {
+    0% { text-shadow: 1px 0 rgb(173, 156, 156); }
+    20% { text-shadow: -1px 0 rgb(33, 42, 42); }
+    40% { text-shadow: 1px 0 rgb(64, 79, 108); }
+    60% { text-shadow: -1px 0 rgb(68, 53, 68); }
+    80% { text-shadow: 1px 0 rgb(130, 130, 118); }
+    100% { text-shadow: -1px 0 rgb(56, 46, 46); }
+}
+
+
+.story-text {
+    animation: glitch 1s infinite;
+}
+
+
+.image-gallery-top img {
+    background-image: url('https://media.giphy.com/media/AukKPxzg1XT6U/giphy.gif?cid=ecf05e47piogm61iuquyui9ksfde7auw65jceveeedmta5xd&ep=v1_gifs_related&rid=giphy.gif&ct=g');
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjust as needed */
+    width: 300px; 
+    height: 200px; 
+    margin-right: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-gallery-top-inner {
+    display: inline-flex;
+}
+
+.image-gallery-top img {
+    width: 300px; 
+    height: 200px; 
+    margin-right: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-gallery-top img:hover {
+    transform: scale(1.1); 
+}
+
+
+.image-gallery-top {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;    
+}
+
+.image-gallery-top::-webkit-scrollbar {
+    display: none; 
+}
+
+
+.story-container {
+    display: inline-block;
+    padding: 50px;
+    width: 100vw;
+    transform: none; 
+    white-space: normal;
+}
+
+
+.story-text {
+    text-align: center;
+    display: inline-block;
+    font-family: 'Creepster', cursive; 
+    font-size: 1.5em;
+    width: 80vw; 
+    margin: 0 50px;
+    opacity: 0.9;
+    animation: glitch 1s infinite; 
+    vertical-align: top;
+    text-shadow: 2px 2px 0 rgba(49, 60, 56, 0.5), 0 0 25px rgba(74, 86, 74, 0.3), 0 0 5px rgba(0, 0, 255, 0.1); /* Add a creepy text shadow */
+}
+
+
+@keyframes glitch {
+    0% { text-shadow: 1px 0 rgb(161, 142, 142); }
+    20% { text-shadow: -1px 0 rgb(25, 52, 57); }
+    40% { text-shadow: 1px 0 rgb(255, 255, 255); }
+    60% { text-shadow: -1px 0 rgb(55, 48, 55); }
+    80% { text-shadow: 1px 0 rgb(45, 45, 42); }
+    100% { text-shadow: -1px 0 rgb(56, 52, 74); }
+}
+.bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    animation: bg-animation 0.15s infinite;
+    opacity: 0.7;
+}
+
+@keyframes bg-animation {
+    0% { transform: translate(0,0); opacity: 0.9; filter: hue-rotate(0deg); }
+    20% { transform: translate(-10%,-10%); opacity: 0.6; filter: hue-rotate(15deg); }
+    40% { transform: translate(-5%,5%); opacity: 0.8; filter: hue-rotate(-15deg); }
+    60% { transform: translate(10%,-5%); opacity: 1; filter: hue-rotate(30deg); }
+    80% { transform: translate(-10%,10%); opacity: 0.5; filter: hue-rotate(-30deg); }
+    100% { transform: translate(0,0); opacity: 0.9; filter: hue-rotate(0deg); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.image-gallery-bottom {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-gallery-bottom {
+    display: inline-flex;
+}
+
+.image-gallery-bottom img {
+    /* background-image: url('firstimage.png'); */
+    width: 300px; 
+    height: 200px;
+    margin-right: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-gallery-bottom img:hover {
+    transform: scale(1.1); 
+}
+
+
+.image-gallery-bottom {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+}
+
+.image-gallery-bottom::-webkit-scrollbar {
+    display: none; 
+}
+
+/* About button container positioned at the top */
+#aboutButtonContainer {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10; /* Ensure it's above other content */
+    padding: 10px;
+}
+
+/* About Button Styling */
+#aboutButton {
+    position: absolute;
+    top: 20px; /* Adjust as needed to drop down slightly */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #262626;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+    animation: float 2s ease-in-out infinite alternate;
+}
+
+/* Button Animation */
+@keyframes float {
+    0% {
+        transform: translate(-50%, -5px);
+    }
+    100% {
+        transform: translate(-50%, 5px);
+    }
+}
+
+#aboutButton:hover {
+    background-color: #666;
+    transform: scale(1.05) translateX(-50%);
+}
+
+
+/* About content overlay */
+#aboutOverlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    z-index: 20; /* Above all other content */
+    justify-content: center;
+    align-items: center;
+}
+
+/* About content box styling */
+#aboutContent {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    color: #000;
+    text-align: center;
+    max-width: 80%;
+}
+
+/* Close button inside overlay */
+#closeOverlay {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#closeOverlay:hover {
+    background-color: #666;
+}
